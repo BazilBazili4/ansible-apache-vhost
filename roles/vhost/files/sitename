@@ -1,0 +1,18 @@
+<VirtualHost *.80>
+	ServerName realty.estdev.ru
+	DocumentRoot /var/www/www-root/data/www/realty.estdev.ru/frontend/web
+	ServerAdmin webmaster@realty.estdev.ru
+	AddDefaultCharset off
+	SuexecUserGroup www-root www-root
+	CustomLog /var/www/httpd-logs/realty.estdev.ru.access.log combined
+	ErrorLog /var/www/httpd-logs/realty.estdev.ru.error.log
+	<FilesMatch "\.ph(p[3-5]?|tml)$">
+		SetHandler fcgid-script
+		FCGIWrapper /var/www/php-bin-isp-php71/www-root/php
+	</FilesMatch>
+	ServerAlias www.realty.estdev.ru
+	DirectoryIndex index.php index.html
+</VirtualHost>
+<Directory /var/www/www-root/data/www/realty.estdev.ru/frontend/web>
+	Options +Includes +ExecCGI
+</Directory>

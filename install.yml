@@ -5,5 +5,5 @@
   roles:
     - directory
     - vhost
-    - database
-    - application
+    # - database
+    # - application

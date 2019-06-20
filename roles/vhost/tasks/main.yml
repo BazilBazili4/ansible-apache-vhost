@@ -1,0 +1,4 @@
+- name: add virtual host
+  copy:
+    src: ../files/sitename
+    dest: /etc/apache2/sites-available/sitename
