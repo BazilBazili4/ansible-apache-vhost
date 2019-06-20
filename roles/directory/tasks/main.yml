@@ -1,0 +1,4 @@
+- name: create application directory
+  file:
+    path: /var/www/html/sitename
+    state: directory
