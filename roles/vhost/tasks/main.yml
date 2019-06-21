@@ -1,4 +1,16 @@
 - name: add virtual host
   copy:
-    src: ../files/sitename
-    dest: /etc/apache2/sites-available/sitename
+    src: ../files/sitename.conf
+    dest: /etc/apache2/sites-available/sitename.conf
+  notify: restart apache
+
+- name: Add vhost symlink in sites-enabled.
+  file:
+    src: /etc/apache2/sites-available/sitename.conf
+    dest: /etc/apache2/sites-enabled/sitename.conf
+    state: link
+  notify: restart apache
+
+- name: Ensure Apache running
+  service: name=apache2 state=started enabled=yes
+
