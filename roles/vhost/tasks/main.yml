@@ -1,7 +1,7 @@
 - name: add virtual host
   copy:
     src: ../files/landing.estrella.ru.conf
-    dest:  /etc/httpd/conf/vhosts/www-root/landing.estrella.ru.conf
+    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.estdev.ru.conf
   notify: restart apache
 
 # - name: Add vhost symlink in sites-enabled.
