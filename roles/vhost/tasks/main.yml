@@ -12,5 +12,5 @@
 #   notify: restart apache
 
 - name: Ensure Apache running
-  service: name=apache2 state=started enabled=yes
+  service: name=httpd state=started enabled=yes
 
