@@ -1,15 +1,15 @@
 - name: add virtual host
   copy:
-    src: ../files/sitename.conf
-    dest: /etc/apache2/sites-available/sitename.conf
+    src: ../files/landing.estrella.ru.conf
+    dest:  /etc/httpd/conf/vhosts/www-root/landing.estrella.ru.conf
   notify: restart apache
 
-- name: Add vhost symlink in sites-enabled.
-  file:
-    src: /etc/apache2/sites-available/sitename.conf
-    dest: /etc/apache2/sites-enabled/sitename.conf
-    state: link
-  notify: restart apache
+# - name: Add vhost symlink in sites-enabled.
+#   file:
+#     src: /etc/apache2/sites-available/landing.estrella.ru.conf
+#     dest: /etc/apache2/sites-enabled/landing.estrella.ru.conf
+#     state: link
+#   notify: restart apache
 
 - name: Ensure Apache running
   service: name=apache2 state=started enabled=yes

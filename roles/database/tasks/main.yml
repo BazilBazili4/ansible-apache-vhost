@@ -1,5 +1,14 @@
+
+- name: Create database user with all database privileges
+  mysql_user:
+    name: realty
+    password: realty31
+    priv: '*.*:ALL'
+    state: present
+
 - name: Create databases 
   mysql_db:
-    login_user: root
-    name: landing
+    login_user: realty
+    login_password: realty31
+    name: realty
     state: present

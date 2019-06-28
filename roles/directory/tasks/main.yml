@@ -1,4 +1,17 @@
 - name: create application directory
   file:
-    path: /var/www/sitename
+    path: /var/www/www-root/data/www/test-realty.estdev.ru
     state: directory
+
+- name: create logs directory
+  file:
+    path: /var/www/httpd-logs
+    state: directory
+
+- name: change ownership of a directory
+  file:
+    path: /var/www/www-root/data/www/test-realty.estdev.ru
+    state: directory
+    recurse: yes
+    owner: www-root
+    group: www-root
