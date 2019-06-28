@@ -1,6 +1,6 @@
 - name: add virtual host
   copy:
-    src: ../files/landing.estrella.ru.conf
+    src: ../files/test-realty.estdev.ru.conf
     dest:  /etc/httpd/conf/vhosts/www-root/test-realty.estdev.ru.conf
   notify: restart apache
 
