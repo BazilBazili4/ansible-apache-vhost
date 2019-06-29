@@ -1,6 +1,6 @@
 - name: add virtual host
   copy:
-    src: ../files/test-realty.tmweb.ru.conf
+    src: ../files/test-realty.tmweb.ru
     dest:  /etc/httpd/conf/vhosts/www-root/test-realty.tmweb.ru
   notify: restart apache
 
