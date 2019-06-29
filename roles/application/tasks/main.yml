@@ -1,7 +1,7 @@
 # Example clone a repo with separate git directory
 - git:
     repo: https://Bazilevs492@bitbucket.org/Bazilevs492/realty.estdev.ru.git
-    dest: /var/www/www-root/data/www/test2-realty.realtycrm.pro
+    dest: /var/www/www-root/data/www/test-realty.realtycrm.pro
 
 
 
