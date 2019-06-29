@@ -1,5 +1,5 @@
 <VirtualHost 188.225.10.135:80>
-	ServerName test-realty.realtycrm.pro
+	ServerName test2-realty.realtycrm.pro
 	DocumentRoot /var/www/www-root/data/www/test-realty.realtycrm.pro/backend/web
 	ServerAdmin webmaster@test-realty.realtycrm.pro
 	AddDefaultCharset off
@@ -13,9 +13,9 @@
 	ServerAlias www.test-realty.tw1.su
 	DirectoryIndex index.php index.html
 </VirtualHost>
-<Directory /var/www/www-root/data/www/test-realty.realtycrm.pro/backend/web>
+<Directory /var/www/www-root/data/www/test2-realty.realtycrm.pro/backend/web>
 	Options +Includes +ExecCGI
 </Directory>
-<Directory /var/www/www-root/data/www/test-realty.realtycrm.pro.ru>
+<Directory /var/www/www-root/data/www/test2-realty.realtycrm.pro>
 	Options +Includes +ExecCGI
 </Directory>
