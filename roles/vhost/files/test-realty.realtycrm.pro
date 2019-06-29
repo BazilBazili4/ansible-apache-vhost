@@ -1,6 +1,6 @@
 <VirtualHost 188.225.10.135:80>
 	ServerName test-realty.realtycrm.pro
-	DocumentRoot /var/www/www-root/data/www/test-realty.realtycrm.pro
+	DocumentRoot /var/www/www-root/data/www/test-realty.realtycrm.pro/backend/web
 	ServerAdmin webmaster@test-realty.realtycrm.pro
 	AddDefaultCharset off
 	SuexecUserGroup www-root www-root
