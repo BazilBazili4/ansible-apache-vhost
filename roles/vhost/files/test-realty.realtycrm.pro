@@ -16,6 +16,6 @@
 <Directory /var/www/www-root/data/www/test2-realty.realtycrm.pro/backend/web>
 	Options +Includes +ExecCGI
 </Directory>
-<Directory /var/www/www-root/data/www/test2-realty.realtycrm.pro>
+<Directory /var/www/www-root/data/www/test2-realty.realtycrm.pro/backend/web>
 	Options +Includes +ExecCGI
 </Directory>
