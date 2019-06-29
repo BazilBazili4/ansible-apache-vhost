@@ -1,7 +1,7 @@
 - name: add virtual host
   copy:
-    src: ../files/test-realty.estdev.ru.conf
-    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.estdev.ru.conf
+    src: ../files/test-realty.tmweb.ru.conf
+    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.tmweb.ru
   notify: restart apache
 
 # - name: Add vhost symlink in sites-enabled.
