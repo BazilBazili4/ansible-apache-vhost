@@ -1,7 +1,7 @@
 - name: add virtual host
   copy:
-    src: ../files/test-realty.tw1.su
-    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.tw1.su
+    src: ../files/test-realty.realtycrm.pro
+    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.realtycrm.pro
   notify: restart apache
 
 # - name: Add vhost symlink in sites-enabled.

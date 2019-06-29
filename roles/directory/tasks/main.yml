@@ -1,6 +1,6 @@
 - name: create application directory
   file:
-    path: /var/www/www-root/data/www/test-realty.tmweb.ru
+    path: /var/www/www-root/data/www/test-realty.realtycrm.pro
     state: directory
 
 # - name: create logs directory
@@ -10,7 +10,7 @@
 
 - name: change ownership of a directory
   file:
-    path: /var/www/www-root/data/www/test-realty.tmweb.ru
+    path: /var/www/www-root/data/www/test-realty.realtycrm.pro
     state: directory
     recurse: yes
     owner: www-root
