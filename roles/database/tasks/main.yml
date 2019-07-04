@@ -10,5 +10,5 @@
   mysql_db:
     login_user: realty
     login_password: realty31
-    name: realty
+    name: "{{db_name}}"
     state: present

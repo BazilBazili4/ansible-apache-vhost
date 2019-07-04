@@ -3,7 +3,7 @@
 - hosts: all 
   become: yes
   roles:
-    - directory
-    - vhost
+    # - directory
+    # - vhost
     - database
-    - application
+    # - application
