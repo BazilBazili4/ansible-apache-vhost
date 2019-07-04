@@ -9,15 +9,20 @@
     command: update
     working_dir: "{{ server_root }}/{{ app_name }}"
 
-- name: execute migrations 
-  shell: php yii migrate -y
-  args:
-    chdir: "{{ server_root }}/{{ app_name }}"
-
-- name: copy application config
+- name: copy common config
   template:
     src: main-local.php.j2
-    dest:  "{{ server_root }}/{{ app_name }}/config/main-local.php"
+    dest:  "{{ server_root }}/{{ app_name }}/common/config/main-local.php"
+
+- name: copy application console config
+  copy:
+    src: ../files/main-local.php
+    dest:  "{{ server_root }}/{{ app_name }}/console/config/main-local.php"
+
+- name: copy application console params
+  copy:
+    src: ../files/params-local.php
+    dest:  "{{ server_root }}/{{ app_name }}/console/config/params-local.php"
 
 - name: "{{ app_name }} | adjust directory ownership"
   file:
@@ -25,3 +30,10 @@
     owner: "{{ app_owner }}"
     group: "{{ app_group }}"
     recurse: yes
+
+- name: execute migrations 
+  shell: php yii migrate -y
+  args:
+    chdir: "{{ server_root }}/{{ app_name }}"
+
+
