@@ -1,0 +1,35 @@
+<?php
+return [
+   'components' => [
+       'authManager'  => ['class' => 'yii\rbac\DbManager'],
+        'db'     => [
+            'class'    => 'yii\db\Connection',
+            'dsn'      => 'mysql:host={{ db_host }};dbname={{ db_name }}',
+            'username' => '{{ realty }}',
+            'password' => '{{ realty31 }}',
+            'charset'  => 'utf8',
+           'enableSchemaCache' => true,
+            'schemaCacheDuration' => 3600,
+            'schemaCache' => 'cache',
+        ],
+        ],
+    'aliases'    => [
+
+        /* Production (Goldmean) */
+        '@frontendURL'  => 'http://localhost',
+        '@backendURL'   => 'http://{{ app_name }}',
+
+        '@backendObjectTempDir' => '@backend/web/uploads/object_temp',
+        '@backendObjectTempUrl' => '@backendURL/uploads/object_temp',
+        '@backendObjectDocTempDir' => '@backend/web/uploads/object_doc_temp',
+        '@backendObjectDocTempUrl' => '@backendURL/uploads/object_doc_temp',
+        '@backendObjectDocumentDir' => '@backend/web/uploads/object_document',
+        '@frontendObjectOriginalUrl' => '@frontendURL/uploads/object_original',
+        '@frontendObjectOriginalDir' => '@frontend/web/uploads/object_original',
+        '@frontendObjectUrl' => '@frontendURL/uploads/object',
+        '@frontendObjectDir' => '@frontend/web/uploads/object',
+        '@backendObjectDocumentUrl' => '@backendURL/uploads/object_document',
+        '@avitoURL' => '@frontendURL/avito',
+        '@avito' => '@frontend/web/avito',
+    ],
+];

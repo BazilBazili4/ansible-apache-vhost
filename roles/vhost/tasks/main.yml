@@ -1,7 +1,7 @@
 - name: add virtual host
-  copy:
-    src: ../files/test-realty.realtycrm.pro
-    dest:  /etc/httpd/conf/vhosts/www-root/test-realty.realtycrm.pro
+  template:
+    src: test-realty.estdev.ru.j2
+    dest: "{{ server_conf }}/{{ app_name }}"
   notify: restart apache
 
 # - name: Add vhost symlink in sites-enabled.

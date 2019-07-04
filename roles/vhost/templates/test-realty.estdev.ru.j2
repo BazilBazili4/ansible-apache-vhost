@@ -1,0 +1,21 @@
+<VirtualHost 188.225.10.135:80>
+	ServerName {{ app_name }}
+	DocumentRoot {{ server_root}}/{{ app_name }}
+	ServerAdmin webmaster@{{ app_name }}
+	AddDefaultCharset off
+	SuexecUserGroup www-root www-root
+	CustomLog /var/www/www-root/data/{{ app_name }}.access.log combined
+	ErrorLog /var/www/www-root/data/logs/{{ app_name }}.error.log
+	<FilesMatch "\.ph(p[3-5]?|tml)$">
+		SetHandler fcgid-script
+		FCGIWrapper /var/www/php-bin-isp-php71/www-root/php
+	</FilesMatch>
+	ServerAlias www.{{ app_name }}
+	DirectoryIndex index.php index.html
+</VirtualHost>
+<Directory /var/www/www-root/data/www/{{ app_name }}/backend/web>
+	Options +Includes +ExecCGI
+</Directory>
+<Directory /var/www/www-root/data/www/{{ app_name }}>
+	Options +Includes +ExecCGI
+</Directory>

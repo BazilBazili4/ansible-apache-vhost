@@ -1,13 +1,27 @@
 # Example clone a repo with separate git directory
 - name: clone project from git
   git:
-    repo: https://Bazilevs492@bitbucket.org/Bazilevs492/realty.estdev.ru.git
-    dest: /var/www/www-root/data/www/test-realty.realtycrm.pro
+    repo: "{{ app_repo }}"
+    dest: "{{ server_root }}/{{ app_name }}"
 
 - name: install dependencies from composer
   composer:
-    command: install
-    working_dir: /path/to/project
+    command: update
+    working_dir: "{{ server_root }}/{{ app_name }}"
 
+- name: execute migrations 
+  shell: php yii migrate -y
+  args:
+    chdir: "{{ server_root }}/{{ app_name }}"
 
-    
+- name: copy application config
+  template:
+    src: main-local.php.j2
+    dest:  "{{ server_root }}/{{ app_name }}/config/main-local.php"
+
+- name: "{{ app_name }} | adjust directory ownership"
+  file:
+    path: "{{ server_root}}/{{ app_name }}"
+    owner: "{{ app_owner }}"
+    group: "{{ app_group }}"
+    recurse: yes

@@ -1,14 +1,14 @@
 
 - name: Create database user with all database privileges
   mysql_user:
-    name: realty
-    password: realty31
+    name: "{{ db_user }}"
+    password: "{{ db_pass}}"
     priv: '*.*:ALL'
     state: present
 
 - name: Create databases 
   mysql_db:
-    login_user: realty
-    login_password: realty31
+    login_user: "{{ db_user }}"
+    login_password: "{{ db_pass }}"
     name: "{{db_name}}"
     state: present

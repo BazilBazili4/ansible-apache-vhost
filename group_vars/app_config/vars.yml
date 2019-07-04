@@ -1,12 +1,14 @@
 ---
 # OhHi
-server_root: /var/www
-app_root: web
-app_name: name 
-app_path: "{{ server_root}}/{{ app_name }}/web"
+server_conf: /etc/httpd/conf/vhosts/www-root
 app_owner: www-root
 app_group: www-root
+server_root: "/var/www/{{app_owner}}/data/www/"
+app_root: web
+app_name: name 
+app_path: "{{ server_root}}/{{ app_name }}/{{app_root}}"
 app_repo: https://github.com/yiisoft/yii2-app-basic.git
 db_host: localhost
 db_name: realty
-db_user: realty31
+db_user: realty
+db_pass: realty31
