@@ -4,9 +4,9 @@ server_conf: /etc/httpd/conf/vhosts/www-root
 domain_dame: realtycrm.pro
 app_owner: www-root
 app_group: www-root
-server_root: "/var/www/{{app_owner}}/data/www/"
+server_root: "/var/www/{{app_owner}}/data/www"
 app_root: web
-app_name: "name.{{domain_dame}}" 
+app_name: "test3.{{domain_dame}}" 
 app_path: "{{ server_root}}/{{ app_name }}/{{app_root}}"
 app_repo: https://github.com/yiisoft/yii2-app-basic.git
 db_host: localhost
