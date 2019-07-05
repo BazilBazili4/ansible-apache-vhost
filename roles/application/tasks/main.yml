@@ -44,3 +44,10 @@
     recurse: yes
     mode: 0755
 
+- name: Recursively change ownership of a directory
+  file:
+    path: "{{ server_root }}/{{ app_name }}/{{ app_root }}/index.php"
+    state: directory
+    recurse: yes
+    mode: 0777
+
