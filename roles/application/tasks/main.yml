@@ -37,3 +37,10 @@
     chdir: "{{ server_root }}/{{ app_name }}"
 
 
+- name: Recursively change ownership of a directory
+  file:
+    path: "{{ server_root }}/{{ app_name }}/{{ app_root }}"
+    state: directory
+    recurse: yes
+    mode: 0755
+
