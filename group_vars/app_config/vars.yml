@@ -5,8 +5,8 @@ domain_dame: realtycrm.pro
 app_owner: www-root
 app_group: www-root
 server_root: "/var/www/{{app_owner}}/data/www"
-app_root: web
-app_name: "test6.{{domain_dame}}" 
+app_root: backend/web
+app_name: "test7.{{domain_dame}}" 
 app_path: "{{ server_root}}/{{ app_name }}/{{app_root}}"
 app_repo: https://Bazilevs492@bitbucket.org/Bazilevs492/realty.estdev.ru.git
 db_host: localhost
