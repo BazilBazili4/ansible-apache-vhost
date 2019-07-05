@@ -1,6 +1,6 @@
 <VirtualHost 188.225.10.135:80>
 	ServerName {{ app_name }}
-	DocumentRoot {{ server_root}}/{{ app_name }}
+	DocumentRoot {{ server_root}}/{{ app_name }}/{{ app_root }}
 	ServerAdmin webmaster@{{ app_name }}
 	AddDefaultCharset off
 	SuexecUserGroup www-root www-root
