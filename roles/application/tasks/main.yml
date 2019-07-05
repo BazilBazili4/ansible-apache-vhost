@@ -6,7 +6,7 @@
 
 - name: install dependencies from composer
   composer:
-    command: update
+    command: install
     working_dir: "{{ server_root }}/{{ app_name }}"
 
 - name: copy common config
