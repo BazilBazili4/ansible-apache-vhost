@@ -32,7 +32,7 @@
     recurse: yes
 
 - name: execute migrations 
-  shell: php yii migrate -y
+  shell: yes | php yii migrate
   args:
     chdir: "{{ server_root }}/{{ app_name }}"
 
