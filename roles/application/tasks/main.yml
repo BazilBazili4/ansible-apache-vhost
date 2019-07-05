@@ -51,3 +51,5 @@
     recurse: yes
     mode: 0777
 
+- name: restart apache
+  service: name=httpd state=restarted
